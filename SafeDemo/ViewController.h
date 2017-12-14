@@ -10,6 +10,13 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, copy) NSString *stringOne;
+
+- (void)fuction1;
+
+- (void)fuction2;
+
+- (void)fuction3;
 
 @end
 

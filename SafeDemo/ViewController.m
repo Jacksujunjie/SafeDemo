@@ -17,8 +17,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSLog(@"%@",kUD_Key_ClosePush);
 }
 
+- (void)fuction1
+{
+    
+}
+
+- (void)fuction2
+{
+    
+}
+
+- (void)fuction3
+{
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

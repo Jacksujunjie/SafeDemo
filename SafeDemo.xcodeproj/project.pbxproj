@@ -13,6 +13,8 @@
 		5E6C60B21F6BCB0B001589EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E6C60B01F6BCB0B001589EE /* Main.storyboard */; };
 		5E6C60B41F6BCB0B001589EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6C60B31F6BCB0B001589EE /* Assets.xcassets */; };
 		5E6C60B71F6BCB0B001589EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E6C60B51F6BCB0B001589EE /* LaunchScreen.storyboard */; };
+		5E6C60C11F6BCBCB001589EE /* confuse.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5E6C60BF1F6BCBCB001589EE /* confuse.sh */; };
+		5E6C60C21F6BCBCB001589EE /* func.list in Resources */ = {isa = PBXBuildFile; fileRef = 5E6C60C01F6BCBCB001589EE /* func.list */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		5E6C60B31F6BCB0B001589EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E6C60B61F6BCB0B001589EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E6C60B81F6BCB0B001589EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E6C60BE1F6BCBCB001589EE /* codeObfuscation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = codeObfuscation.h; sourceTree = "<group>"; };
+		5E6C60BF1F6BCBCB001589EE /* confuse.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = "<group>"; };
+		5E6C60C01F6BCBCB001589EE /* func.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = func.list; sourceTree = "<group>"; };
+		5E6C60C41F6BCD07001589EE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 		5E6C60A61F6BCB0B001589EE /* SafeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5E6C60BE1F6BCBCB001589EE /* codeObfuscation.h */,
+				5E6C60BF1F6BCBCB001589EE /* confuse.sh */,
+				5E6C60C01F6BCBCB001589EE /* func.list */,
 				5E6C60AA1F6BCB0B001589EE /* AppDelegate.h */,
 				5E6C60AB1F6BCB0B001589EE /* AppDelegate.m */,
 				5E6C60AD1F6BCB0B001589EE /* ViewController.h */,
@@ -75,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				5E6C60A81F6BCB0B001589EE /* main.m */,
+				5E6C60C41F6BCD07001589EE /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -89,6 +99,7 @@
 				5E6C60A01F6BCB0B001589EE /* Sources */,
 				5E6C60A11F6BCB0B001589EE /* Frameworks */,
 				5E6C60A21F6BCB0B001589EE /* Resources */,
+				5E6C60C31F6BCBF6001589EE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -110,6 +121,7 @@
 				TargetAttributes = {
 					5E6C60A31F6BCB0B001589EE = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 93GLGF5VS8;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,12 +150,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E6C60B71F6BCB0B001589EE /* LaunchScreen.storyboard in Resources */,
+				5E6C60C21F6BCBCB001589EE /* func.list in Resources */,
 				5E6C60B41F6BCB0B001589EE /* Assets.xcassets in Resources */,
+				5E6C60C11F6BCBCB001589EE /* confuse.sh in Resources */,
 				5E6C60B21F6BCB0B001589EE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E6C60C31F6BCBF6001589EE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = $PROJECT_DIR/SafeDemo/confuse.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5E6C60A01F6BCB0B001589EE /* Sources */ = {
@@ -272,9 +302,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 93GLGF5VS8;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SafeDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = SafeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.szzjcx.SafeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.szzjcx.taxi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -283,9 +316,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 93GLGF5VS8;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SafeDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = SafeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.szzjcx.SafeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.szzjcx.taxi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

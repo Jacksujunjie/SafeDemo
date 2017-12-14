@@ -1,0 +1,17 @@
+//
+//  PrefixHeader.pch
+//  SafeDemo
+//
+//  Created by 苏俊杰 on 2017/9/15.
+//  Copyright © 2017年 苏俊杰. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+//添加混淆作用的头文件（这个文件名是脚本confuse.sh中定义的）
+#import "codeObfuscation.h"
+#define kUD_Key_ClosePush  @"OLUserDefault_Key_ClosePushMassage"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
